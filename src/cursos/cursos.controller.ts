@@ -42,6 +42,33 @@ export class CursosController {
     return `Nenhum turno informado. Listando todos os cursos.`;
 }
 
+// 7. Criar a rota ('filtro/avancado'), capturar os query params ('modalidade') e ('vagas'). Concatene as informações recebidas e retorne o objeto 
+// {
+//    modalidade: modalidade || "Não informado",
+//    vagas: vagas ? Number(vagas) : 0,
+//    resultado: 'Filtro aplicado com sucesso'
+// }
+
+@Get('filtro/avancado')
+getAvancado(
+    @Query('modalidade') modalidade?: string,
+    @Query('vagas') vagas?: string
+) {
+    return {
+        modalidade: modalidade || "Não informado",
+        vagas: vagas ? Number(vagas) : 0,
+        resultado: 'Filtro aplicado com sucesso'
+    };
+}
+
+
+
+
+
+
+
+
+
   
 
 }
