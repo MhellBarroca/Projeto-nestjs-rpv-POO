@@ -32,15 +32,14 @@ export class CursosController {
 // Se enviar filtro "Realizando buscas para os cursos {turno}". Se não enviar "Nenhum turno informado. Listando todos os cursos"
 
 @Get('pesquisa/:periodo')
-pesquisa(
-    @Param('periodo') periodo: string,
+    getPeriodo(
     @Query('turno') turno?: string
-) {
+){
     if (turno) {
-        return `Realizando buscas para os cursos ${turno} no período ${periodo}`;
+        return `Realizando buscas para os cursos do turno ${turno}`;
     }
 
-    return `Nenhum turno informado. Listando todos os cursos no período ${periodo}`;
+    return `Nenhum turno informado. Listando todos os cursos.`;
 }
 
   
